@@ -38,4 +38,21 @@ public class addPetAPITests {
                         "name", equalTo(name));
     }
 
+    @When("I add a pet to the catalogue with no payload")
+    public void i_add_a_pet_to_the_catalogue_with_no_payload(){
+        response = new PetStoreEndpoint()
+                .addPetToStoreCatalogue();
+    }
+
+    @Then("send an error with \"(.*)\"$")
+    public void send_an_error_with_errorCode(int errorCode){
+        response.then().log().all()
+                .statusCode(errorCode);
+    }
+
+    @When("I add a pet to the catalogue with no header")
+    public void i_add_a_pet_to_the_catalogue_with_no_header(){
+        response = new PetStoreEndpoint()
+                .addPetToStoreCatalogueWithNoHeader();
+    }
 }

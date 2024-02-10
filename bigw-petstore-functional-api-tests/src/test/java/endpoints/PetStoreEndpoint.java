@@ -61,4 +61,25 @@ public class PetStoreEndpoint {
                 .post(baseURL+ addPetPath);
 
     }
+
+    /**
+     *
+     */
+    public Response addPetToStoreCatalogue() {
+
+
+        return httpRequest
+                .log().all()
+                .header("Content-Type", "application/json")
+                .post(baseURL+ addPetPath);
+    }
+
+    public Response addPetToStoreCatalogueWithNoHeader() {
+        JSONObject body = new JSONObject();
+
+        return httpRequest
+                .log().all()
+                .body(body.toJSONString())
+                .post(baseURL+ addPetPath);
+    }
 }
