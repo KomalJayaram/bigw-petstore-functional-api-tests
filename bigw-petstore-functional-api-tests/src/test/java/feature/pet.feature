@@ -13,7 +13,7 @@ Feature: Add a pet to the catalogue
       | 222   | goldenR | sold      | 002        | sporting     | 002   | grTag2  |
       | 333   |         | available | 003        |              | 002   | grTag3  |
 
-
+  @pet @API @POST
   Scenario Outline: Verify relevant errors are generated when required data is missing
     Given The POST pet API can be hit
     When I add a pet to the catalogue with no payload
@@ -22,6 +22,7 @@ Feature: Add a pet to the catalogue
       | ErrorCode |
       | 405       |
 
+  @pet @API @POST
   Scenario Outline: Verify relevant errors are generated when required data is missing
     Given The POST pet API can be hit
     When I add a pet to the catalogue with no header

@@ -15,6 +15,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber-reports/cucumber.json",
                 "io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
         },
+        publish = true,
         monochrome = true
 )
 public class TestRunner {

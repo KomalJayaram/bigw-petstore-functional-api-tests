@@ -36,7 +36,12 @@ public class addPetAPITests {
         response.then().log().all()
                 .statusCode(HttpStatus.SC_OK)
                 .body("id", equalTo(id),
-                        "name", equalTo(name));
+                        "name", equalTo(name),
+                        "status", equalTo(status),
+                        "category.name", equalTo(categoryName),
+                        "category.id", equalTo(categoryId),
+                        "tags[0].name", equalTo(tagName),
+                        "tags[0].id", equalTo(tagId));
     }
 
     @When("I add a pet to the catalogue with no payload")

@@ -21,24 +21,7 @@
         <allure.server.host>127.0.1</allure.server.host>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-bom</artifactId>
-                <version>${allure.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <dependencies>
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-cucumber4-jvm</artifactId>
-            <version>2.25.0</version>
-            <scope>test</scope>
-        </dependency>
         <dependency>
             <groupId>com.vimalselvam</groupId>
             <artifactId>testng-extentsreport</artifactId>
