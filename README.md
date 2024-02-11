@@ -22,7 +22,7 @@
   
  > As a Store Owner, I would like add new pet profile 
  > Description : Create a pet profile
- > * POST /pet Add an new pet to the store
+ > * POST /pet add a new pet to the store
 
   <h2> Approach </h2>
 
