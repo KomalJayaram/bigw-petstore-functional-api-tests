@@ -9,6 +9,7 @@ import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 
 
 public class addPetAPITests {
@@ -47,7 +48,8 @@ public class addPetAPITests {
     @Then("send an error with \"(.*)\"$")
     public void send_an_error_with_errorCode(int errorCode){
         response.then().log().all()
-                .statusCode(errorCode);
+                .statusCode(errorCode)
+                .body(notNullValue());
     }
 
     @When("I add a pet to the catalogue with no header")

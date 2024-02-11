@@ -11,8 +11,9 @@ import org.junit.runner.RunWith;
         glue = "src/test/java/steps/addPetAPITests.java",
         plugin  = {
                 "pretty",
-                "html:target/cucumber-reports.html",
-                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
+                "html:target/cucumber",
+                "json:target/cucumber-reports/cucumber.json",
+                "io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm"
         },
         monochrome = true
 )

@@ -19,7 +19,7 @@ public class PetStoreEndpoint {
 
 
     /**
-     *
+     * Hits petstore baseURL
      */
     public Response hitPetStoreHomePage(){
         return httpRequest
@@ -29,7 +29,16 @@ public class PetStoreEndpoint {
     }
 
     /**
+     * POSTs pet information
      *
+     * @param id the id of the pet
+     * @param name the name of the pet
+     * @param status the status - available, sold or pending
+     * @param categoryId the category id of the pet
+     * @param categoryName the category name the pet belongs to
+     * @param tagId the tag Id of the pet
+     * @param tagName the tag name of the pet
+     * @return the response from POST /pet call
      */
     public Response addPetToStoreCatalogue(int id, String name, String status, int categoryId, String categoryName, int tagId, String tagName) {
 
@@ -63,10 +72,10 @@ public class PetStoreEndpoint {
     }
 
     /**
-     *
+     * POSTs pet information without payload
+     * @return error response from POST /pet call
      */
     public Response addPetToStoreCatalogue() {
-
 
         return httpRequest
                 .log().all()
@@ -74,6 +83,10 @@ public class PetStoreEndpoint {
                 .post(baseURL+ addPetPath);
     }
 
+    /**
+     * POSTs pet information without header
+     * @return the error response from POST /pet call
+     */
     public Response addPetToStoreCatalogueWithNoHeader() {
         JSONObject body = new JSONObject();
 

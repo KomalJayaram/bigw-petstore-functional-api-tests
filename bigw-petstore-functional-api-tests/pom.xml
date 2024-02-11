@@ -19,7 +19,7 @@
         <allure.report.directory>${project.build.directory}/allure-test-report</allure.report.directory>
         <allure-maven-plugin.version>2.12.0</allure-maven-plugin.version>
         <allure.server.host>127.0.1</allure.server.host>
-
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -191,6 +191,18 @@
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>${allure-maven-plugin.version}</version>
+                <configuration>
+                    <allureDownloadUrl>${allure.download.url}</allureDownloadUrl>
+                    <serveHost>${allure.server.host}</serveHost>
+                    <resultsDirectory>${basedir}/allure-results</resultsDirectory>
+                    <reportVersion>${allure.report.version}</reportVersion>
+                    <reportingOutputDirectory>${allure.report.directory}</reportingOutputDirectory>
                 </configuration>
             </plugin>
         </plugins>

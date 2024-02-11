@@ -2,6 +2,7 @@ Feature: Add a pet to the catalogue
 
   This feature verifies pets can be added to the catalogue
 
+  @pet @API @POST
   Scenario Outline: Verify pet can be added to the catalogue successfully when required data is provided
     Given The POST pet API can be hit
     When I add a pet to the catalogue with "<petId>" and "<petName>" and "<status>" and "<categoryId>" and "<categoryName>" and "<tagId>" and "<tagName>"
