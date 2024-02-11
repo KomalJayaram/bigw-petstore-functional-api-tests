@@ -1,4 +1,3 @@
-<h1> How to run </h1>
 
 <h2>Setup</h2>
 
