@@ -46,12 +46,14 @@ public class addPetAPITests {
 
     @When("I add a pet to the catalogue with no payload")
     public void i_add_a_pet_to_the_catalogue_with_no_payload(){
+
         response = new PetStoreEndpoint()
                 .addPetToStoreCatalogue();
     }
 
     @Then("send an error with \"(.*)\"$")
     public void send_an_error_with_errorCode(int errorCode){
+
         response.then().log().all()
                 .statusCode(errorCode)
                 .body(notNullValue());
@@ -59,7 +61,22 @@ public class addPetAPITests {
 
     @When("I add a pet to the catalogue with no header")
     public void i_add_a_pet_to_the_catalogue_with_no_header(){
+
         response = new PetStoreEndpoint()
                 .addPetToStoreCatalogueWithNoHeader();
+    }
+
+    @When("I add a pet to the catalogue with empty payload")
+    public void i_add_a_pet_to_the_catalogue_with_empty_payload(){
+
+        response = new PetStoreEndpoint()
+                .addPetToStoreCatalogueWithEmptyPayload();
+    }
+
+    @Then("the pet is added to the catalogue successfully with an Id")
+    public void the_pet_is_added_to_the_catalogue_successfully_with_an_Id(){
+        response.then().log().all()
+                .statusCode(HttpStatus.SC_OK)
+                .body("id",notNullValue());
     }
 }

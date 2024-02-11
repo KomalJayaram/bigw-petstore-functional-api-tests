@@ -95,4 +95,18 @@ public class PetStoreEndpoint {
                 .body(body.toJSONString())
                 .post(baseURL+ addPetPath);
     }
+
+    /**
+     * POSTs pet information without header
+     * @return the error response from POST /pet call
+     */
+    public Response addPetToStoreCatalogueWithEmptyPayload() {
+        JSONObject body = new JSONObject();
+
+        return httpRequest
+                .log().all()
+                .body(body.toJSONString())
+                .header("Content-Type", "application/json")
+                .post(baseURL+ addPetPath);
+    }
 }

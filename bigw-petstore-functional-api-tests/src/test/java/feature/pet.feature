@@ -15,6 +15,12 @@ Feature: Add a pet to the catalogue
       | 444   | aVeryVeryVeryVeryVeryVeryLongName | available | 004        |              | 004   | grTag4  |
 
   @pet @API @POST
+  Scenario: Verify pet can be added to the catalogue successfully when required data is provided
+    Given The POST pet API can be hit
+    When I add a pet to the catalogue with empty payload
+    Then the pet is added to the catalogue successfully with an Id
+
+  @pet @API @POST
   Scenario Outline: Verify relevant errors are generated when required data is missing
     Given The POST pet API can be hit
     When I add a pet to the catalogue with no payload
